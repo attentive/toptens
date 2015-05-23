@@ -1,0 +1,2 @@
+;; Analyzed by ClojureScript 0.0-3211
+{:name re-frame.db, :doc nil, :excludes #{}, :use-macros nil, :require-macros nil, :uses nil, :requires {reagent reagent.core, reagent.core reagent.core}, :imports nil, :defs {app-db {:name re-frame.db/app-db, :file "resources/public/js/compiled/out/re_frame/db.cljs", :line 10, :column 1, :end-line 10, :end-column 13, :test true, :meta {:file "/Volumes/Space/personal/dev/toptens/resources/public/js/compiled/out/re_frame/db.cljs", :line 10, :column 7, :end-line 10, :end-column 13}}}}
