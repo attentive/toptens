@@ -1,25 +1,27 @@
 (ns toptens.films
-  (:require [instaparse.core :as insta]))
+  (:require [instaparse.core :as insta]
+            [clojure.edn :as edn]
+            [clojure.string :as s]))
 
 (def toptens-parser
   (insta/parser (slurp "resources/grammar.txt")))
 
 (defn toptens-data [entries]
-  (map (fn [[entry director & favourites]] 
-         {:director (second director)
-          :favourites 
-          (into [] (map (fn [[favourite film director]] 
-                          {:title (second film) 
-                           :director (second director)}) 
-                        favourites))})
-       entries)) 
+  (letfn [(get-val [ast] 
+            (if-let [tok (second ast)]
+              (s/trim tok)
+              nil))] 
+    (map (fn [[entry director & favourites]] 
+           {:director (get-val director)
+            :favourites 
+            (into [] (map (fn [[favourite film director]] 
+                            {:title (get-val film) 
+                             :director (get-val director)}) 
+                          favourites))})
+      entries))) 
 
-(println (toptens-data (toptens-parser (slurp "resources/films.txt"))))
-
-
-#_(println (toptens-parser SAMPLE))
-#_(println (toptens-parser (slurp "resources/films.txt")))
-
+#_(spit "resources/public/toptens.edn" 
+        (toptens-data (toptens-parser (slurp "resources/films.txt"))))
 
 
 (def PARSED-SAMPLE
