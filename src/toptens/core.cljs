@@ -1,114 +1,76 @@
 (ns toptens.core
-  (:require-macros [reagent.ratom :refer [reaction]])  
-  (:require [reagent.core :as reagent :refer [atom]]
+  (:require-macros [reagent.ratom :refer [reaction]]
+                   [toptens.macros :refer [p pp]])  
+  (:require [ajax.core :refer [GET]]
+            [reagent.core :as reagent :refer [atom]]
             [re-frame.core :refer [register-handler
                                    path
                                    register-sub
                                    dispatch
                                    dispatch-sync
-                                   subscribe]]))
+                                   subscribe]]
+            [re-com.core :refer [p button h-box v-box border label title]]))
 
-;; trigger a dispatch every second
-(defonce time-updater (js/setInterval
-                        #(dispatch [:timer (js/Date.)]) 1000))
+(def !toptens (atom {:entries nil}))
 
-(def initial-state
-  {:timer (js/Date.)
-   :time-color "#f34"})
+(defn handler [response] 
+  (dispatch [:init response]))
 
+(GET "/toptens.edn" {:handler handler}) 
 
 ;; -- Event Handlers ----------------------------------------------------------
 
-
-(register-handler                 ;; setup initial state
-  :initialize                     ;; usage:  (submit [:initialize])
-  (fn 
-    [db _]
-    (merge db initial-state)))    ;; what it returns becomes the new state
-
+(register-handler 
+  :init
+  (fn [db [_ value]]
+    (assoc db :entries value)))
 
 (register-handler
-  :time-color                     ;; usage:  (submit [:time-color 34562])
-  (path [:time-color])            ;; this is middleware
-  (fn
-    [time-color [_ value]]        ;; path middleware adjusts the first parameter
-    value))
-
-
-(register-handler
-  :timer
-  (fn
-    ;; the first item in the second argument is :timer the second is the 
-    ;; new value
-    [db [_ value]]
-    (assoc db :timer value)))    ;; return the new version of db
-
+  :shuffle
+  (fn [db [_ value]]
+    ;(pp db)
+    (assoc db :entries (shuffle (:entries db)))))    ;; return the new version of db
 
 ;; -- Subscription Handlers ---------------------------------------------------
 
-
 (register-sub
-  :timer
-  (fn 
-    [db _]                       ;; db is the app-db atom
-    (reaction (:timer @db))))    ;; wrap the compitation in a reaction
-
-
-(register-sub
-  :time-color
+  :entries
   (fn 
     [db _]
-    (reaction (:time-color @db))))
+    (reaction (:entries @db))))
 
 
 ;; -- View Components ---------------------------------------------------------
 
-(defn greeting
-  [message]
-  [:h1 message])
+(defn film-view
+  [film]
+  [h-box
+   :gap "5px" 
+   :size "auto" 
+   :children [[label :label (:title film)] 
+              (if-let [dir (:director film)] [label :class "pull-right" :label (str " " dir)])]])
 
+(defn director-view
+  [person]
+  [title
+   :level :level1 
+   :label (:director person)])
 
-(defn clock
-  []
-  (let [time-color (subscribe [:time-color])
-        timer (subscribe [:timer])]
+(defn entry-view [person]
+  [v-box
+   :size "auto" 
+   :children [[director-view person]
+              (for [film (:favourites person)] [film-view film])]])
 
-    (fn clock-render
-        []
-        (let [time-str (-> @timer
-                           .toTimeString
-                           (clojure.string/split " ")
-                           first)
-              style {:style {:color @time-color}}]
-             [:div.example-clock style time-str]))))
-
-
-(defn color-input
-  []
-  (let [time-color (subscribe [:time-color])]
-
-    (fn color-input-render
-        []
-        [:div.color-input
-         "Time color: "
-         [:input {:type "text"
-                  :value @time-color
-                  :on-change #(dispatch
-                               [:time-color (-> % .-target .-value)])}]])))
-
-(defn simple-example
-  []
-  [:div
-   [greeting "Hello world, it is now"]
-   [clock]
-   [color-input]])
-
-
-;; -- Entry Point -------------------------------------------------------------
-
+(defn toptens-app []
+  (let [entries (subscribe [:entries])]
+    (pp (first @entries))
+    [v-box
+     :size "auto"
+     :children [[button :label "Shuffle" :on-click #(dispatch [:shuffle])]
+                (for [entry @entries] [entry-view entry]) ]]))
 
 (defn ^:export run
   []
-  (dispatch-sync [:initialize])
-  (reagent/render [simple-example]
+  (reagent/render [toptens-app]
                   (js/document.getElementById "app")))

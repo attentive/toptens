@@ -4,8 +4,10 @@
                  [org.clojure/clojurescript "0.0-3211"]
                  [org.clojure/core.match "0.3.0-alpha4"]
                  [re-frame "0.4.0"]
+                 [re-com "0.5.4"]
                  [sablono "0.3.4"]
                  [instaparse "1.4.0"]
+                 [cljs-ajax "0.3.11"]
                  #_[net.drib/strokes "0.5.1"]]
   
   :plugins [[lein-cljsbuild "1.0.6"]
@@ -17,7 +19,9 @@
               :builds [{:id "dev"
                         :source-paths ["src"]
 
-                        :figwheel { :on-jsload "toptens.core/on-js-reload" }
+                        :figwheel { 
+                                   ;:on-jsload "toptens.core/on-js-reload" 
+                                   }
 
                         :compiler {:main toptens.core
                                    :asset-path "js/compiled/out"
