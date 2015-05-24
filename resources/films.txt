@@ -1,6 +1,3 @@
-Retrieved from https://mubi.com/topics/top-10-films-as-picked-by-filmmakers
-
-
 Pedro Almodóvar
 
 The Night of the Hunter (Laughton) 
@@ -12,7 +9,7 @@ Out of the Past (Tourneur)
 Midnight (Leisen) 
 Some Like It Hot (Wilder) 
 Touch of Evil (Welles)
-Senso (Visconti
+Senso (Visconti)
 
 Allison Anders
 
@@ -134,7 +131,7 @@ It Happened One Night (Capra)
 
 Ingmar Bergman
 
-The Circus (Chaplin))
+The Circus (Chaplin)
 Le quai des brumes (Carne)
 Dyrygent (Wajda) 
 Kvarteret Korpen (Widerberg) 
@@ -153,7 +150,7 @@ The Fall of the Romanov Dynasty (Shub)
 Berlin, Symphony of a Great City (Ruttman)
 Man with a Movie Camera (Vertov) 
 Enthusiasm (Vertov) 
-Regen (Rain) (Ivens/Franken) 
+Regen (Ivens/Franken) 
 Meshes of the Afternoon (Deren)
 A Movie (Conner)
 Window Water Baby Moving (Brakhage)
@@ -379,7 +376,7 @@ Blade Runner (Scott)
 
 Harun Farocki
 
-My Life to Live (Vivre sa vie) (Godard)
+Vivre sa vie (Godard)
 Not Reconciled (Straub/Huillet) 
 Au Hasard Balthazar (Bresson)
 Murder by Contract (Lerner) 
@@ -740,16 +737,16 @@ The Railroad Man (Germi)
 
 Stanley Kubrick
 
-I Vitelloni (Federico Fellini), 
-Wild Strawberries (Ingmar Bergman), 
-Citizen Kane (Orson Welles), 
-The Treasure of the Sierra Madre (John Huston), 
-City Lights (Charles Chaplin), 
-Henry V (Laurence Olivier), 
-La Notte (Michelangelo Antonioni), 
-The Bank Dick (W.C. Fields), 
-Roxie Hart (William Wellman), 
-Hell’s Angels (Howard Hughes).
+I Vitelloni (Federico Fellini) 
+Wild Strawberries (Ingmar Bergman) 
+Citizen Kane (Orson Welles) 
+The Treasure of the Sierra Madre (John Huston) 
+City Lights (Charles Chaplin) 
+Henry V (Laurence Olivier) 
+La Notte (Michelangelo Antonioni) 
+The Bank Dick (W.C. Fields) 
+Roxie Hart (William Wellman) 
+Hell’s Angels (Howard Hughes)
 
 George Kuchar
 
@@ -773,8 +770,8 @@ Close-Up (Kiarostami)
 Maborosi (Hirokazu) 
 Four Nights of the Dreamer (Bresson) 
 Citizen Kane (Welles) 
-Oshima’s work 
-Kieslowski’s work 
+*all-by* (Oshima) 
+*all-by* (Kieslowski)
 Time Stands Still (Gothar)
 
 R. Leacock
@@ -829,12 +826,30 @@ Citizen Kane (Welles)
 Fanny and Alexander (Bergman) 
 Carmen Jones (Preminger)
 
-KEN LOACH
+Ken Loach
 
-A Bout de Souffle (Godard) The Battle of Algiers (Pontecorvo) A Blonde in Love (Forman) Bicycle Thieves (De Sica) Closely Observed Trains (Menzel) Fireman’s Ball (Forman) Jules et Jim (Truffaut) La Règle du Jeu (Renoir) The Tree of the Wooden Clogs (Olmi) Wild Strawberries (Bergman)
-SIDNEY LUMET
+A Bout de Souffle (Godard) 
+The Battle of Algiers (Pontecorvo) 
+A Blonde in Love (Forman) 
+Bicycle Thieves (De Sica) 
+Closely Observed Trains (Menzel) 
+Fireman’s Ball (Forman) 
+Jules et Jim (Truffaut) 
+La Règle du Jeu (Renoir) 
+The Tree of the Wooden Clogs (Olmi) 
+Wild Strawberries (Bergman)
 
-The Best Years of Our Lives (Wyler) Fanny and Alexander (Bergman) The Godfather (Coppola) The Grapes of Wrath (Ford) Intolerance (Griffith) The Passion of Joan of Arc (Dreyer) Ran (Kurosawa) Roma (Fellini) Singin’ in the Rain (Kelly, Donen)
+Sidney Lumet
+
+The Best Years of Our Lives (Wyler) 
+Fanny and Alexander (Bergman) 
+The Godfather (Coppola) 
+The Grapes of Wrath (Ford) 
+Intolerance (Griffith) 
+The Passion of Joan of Arc (Dreyer) 
+Ran (Kurosawa) 
+Roma (Fellini) 
+Singin’ in the Rain (Kelly, Donen)
 2001: A Space Odyssey (Kubrick)
 
 Jonathan Lynn
@@ -979,9 +994,10 @@ The Tin Drum (Schlöndorff)
 Apocalypse Now (Coppola) 
 2001: A Space Odyssey (Kubrick)
 
-LUKAS MOODYSSON
+Lukas Moodysson
 
-Bicycle Thieves (De Sica) Fanny and Alexander (Bergman)
+Bicycle Thieves (De Sica) 
+Fanny and Alexander (Bergman)
 Gummo (Korine) 
 La Haine (Kassovitz) 
 The Last Picture Show (Bogdanovich) 
@@ -1301,9 +1317,11 @@ The Servant (Losey)
 The Tenant (Polanski) 
 The Wages of Fear (Clouzot)
 
-PAUL VERHOEVEN
+Paul Verhoeven
 
-La Dolce Vita (Fellini) Ivan the Terrible, Part II (Eisenstein) Lawrence of Arabia (Lean)
+La Dolce Vita (Fellini) 
+Ivan the Terrible, Part II (Eisenstein) 
+Lawrence of Arabia (Lean)
 Rashomon (Kurosawa) 
 Vertigo (Hitchcock) 
 The Seventh Seal (Bergman) 
@@ -1392,34 +1410,32 @@ Husbands (Cassavetes)
 
 David Fincher
 
-Monty Python’s The Holy Grail
-Butch Cassidy and the Sundance Kid
-Chinatown
-Dr. Strangelove
-Godfather 2
-Taxi Driver
-Being There
-All That Jazz
-Alien
-Rear Window
-Zelig
-Cabaret
-Paper Moon
-Jaws
-Lawrence of Arabia
-All the Presidents Men
-8 1/2
-Citizen Kane
-Days of Heaven
-Animal House
-Road Warrior
-Year of Living Dangerously
-American Graffiti
-Terminator
-The Exorcist
-The Graduate
-
-(Tierrafreak.blogspot.com)
+Monty Python’s The Holy Grail (Terry Jones)
+Butch Cassidy and the Sundance Kid 
+Chinatown (Polanski)
+Dr. Strangelove (Kubrick)
+Godfather 2 (Coppola)
+Taxi Driver (Scorsese)
+Being There 
+All That Jazz 
+Alien (Ridley Scott)
+Rear Window (Hitchcock)
+Zelig 
+Cabaret 
+Paper Moon 
+Jaws (Spielberg)
+Lawrence of Arabia (Lean)
+All the Presidents Men 
+8 1/2 (Fellini)
+Citizen Kane (Welles)
+Days of Heaven (Malick)
+Animal House 
+Road Warrior (Miller)
+Year of Living Dangerously 
+American Graffiti 
+Terminator (Cameron)
+The Exorcist (Friedkin)
+The Graduate 
 
 Sofia Coppola
 

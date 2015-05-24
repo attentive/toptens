@@ -1,0 +1,22 @@
+<S> = Entry* 
+Entry = <WhiteSpace*> DirectorEntry <WhiteSpace*> FavouriteEntry+ 
+<DirectorEntry> = Director <EndLine> 
+FavouriteEntry = Film FilmMetadata? <EndLine>
+<FilmMetadata> = <'('> Year? Director <')'> 
+
+Year = #'\d{4},'
+Film = UntrimmedName
+Director = UntrimmedName
+Aka = UntrimmedName
+
+<UntrimmedName> = <WhiteSpace*> Name <WhiteSpace*>
+
+(* A Name contains no \n, ( or ) characters *)
+<Name> = #'[^\n()]+'
+
+(* Cross-line white space *)
+WhiteSpace = <#'\s'>
+
+(* White space until the EOL *)
+<EndLine> = <#'[ \t\r]*'> <'\n'>
+

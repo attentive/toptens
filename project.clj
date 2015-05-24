@@ -5,6 +5,7 @@
                  [org.clojure/core.match "0.3.0-alpha4"]
                  [re-frame "0.4.0"]
                  [sablono "0.3.4"]
+                 [instaparse "1.4.0"]
                  #_[net.drib/strokes "0.5.1"]]
   
   :plugins [[lein-cljsbuild "1.0.6"]
