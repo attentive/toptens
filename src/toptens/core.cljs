@@ -3,13 +3,18 @@
                    [toptens.macros :refer [p pp]])  
   (:require [ajax.core :refer [GET]]
             [reagent.core :as reagent :refer [atom]]
+            [sablono.core :refer-macros [html]]
             [re-frame.core :refer [register-handler
                                    path
                                    register-sub
                                    dispatch
                                    dispatch-sync
-                                   subscribe]]
-            [re-com.core :refer [p button h-box v-box border label title]]))
+                                   subscribe]]))
+(enable-console-print!)
+
+(defn on-js-reload
+  [x]
+  (p "App reloaded."))
 
 (def !toptens (atom {:entries nil}))
 
@@ -44,31 +49,29 @@
 
 (defn film-view
   [film]
-  [h-box
-   :gap "5px" 
-   :size "auto" 
-   :children [[label :label (:title film)] 
-              (if-let [dir (:director film)] [label :class "pull-right" :label (str " " dir)])]])
+  [:div.row 
+   [:div.col-md-6 [:label.pull-right (:title film)]] 
+   (if-let [dir (:director film)] 
+     [:div.col-md-6 [:span (str " " dir)]])])
 
 (defn director-view
   [person]
-  [title
-   :level :level1 
-   :label (:director person)])
+  [:div.row [:div.col-md-12 [:h1 (:director person)]]])
 
 (defn entry-view [person]
-  [v-box
-   :size "auto" 
-   :children [[director-view person]
-              (for [film (:favourites person)] [film-view film])]])
+  [:div
+   [director-view person]
+   (let [favs (map vector (iterate inc 0) (:favourites person))]
+     (for [[k film] favs] 
+       ^{:key (str (:director person) (:title film) k)} [film-view film]))])
 
 (defn toptens-app []
-  (let [entries (subscribe [:entries])]
-    (pp (first @entries))
-    [v-box
-     :size "auto"
-     :children [[button :label "Shuffle" :on-click #(dispatch [:shuffle])]
-                (for [entry @entries] [entry-view entry]) ]]))
+  (let [entries (subscribe [:entries])
+        data (map vector (iterate inc 0) @entries)]
+    [:div.container
+     [:button.btn {:on-click #(dispatch [:shuffle])} "Shuffle"]
+     (for [[k entry] data] 
+       ^{:key (str (:director entry) k)} [entry-view entry])]))
 
 (defn ^:export run
   []
