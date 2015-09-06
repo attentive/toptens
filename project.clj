@@ -1,16 +1,16 @@
 (defproject toptens "0.1.0-SNAPSHOT"
   :description "Visualising the favourite films of film directors"
-  :dependencies [[org.clojure/clojure "1.7.0-RC1"]
-                 [org.clojure/clojurescript "0.0-3211"]
+  :dependencies [[org.clojure/clojure "1.7.0"]
+                 [org.clojure/clojurescript "1.7.48"]
                  [org.clojure/core.match "0.3.0-alpha4"]
-                 [re-frame "0.4.0"]
-                 [sablono "0.3.4"]
-                 [instaparse "1.4.0"]
-                 [cljs-ajax "0.3.11"]
+                 [re-frame "0.4.1"]
+                 [sablono "0.3.6"]
+                 [instaparse "1.4.1"]
+                 [cljs-ajax "0.3.14"]
                  #_[net.drib/strokes "0.5.1"]]
 
-  :plugins [[lein-cljsbuild "1.0.6"]
-            [lein-figwheel "0.3.1"]]
+  :plugins [[lein-cljsbuild "1.1.0"]
+            [lein-figwheel "0.3.9"]]
 
   :source-paths ["src"]
 

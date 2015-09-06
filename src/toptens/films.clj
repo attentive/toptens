@@ -6,11 +6,18 @@
 (def toptens-parser
   (insta/parser (slurp "resources/grammar.txt")))
 
+(defn capitalize-name [nam]
+  (if nam
+    (s/join " " (map s/capitalize (s/split nam #" ")))
+    nil))
+
+
 (defn toptens-data [entries]
-  (letfn [(get-val [ast] 
-            (if-let [tok (second ast)]
-              (s/trim tok)
-              nil))] 
+  (letfn [(get-val [ast]
+            (capitalize-name 
+              (if-let [tok (second ast)]
+                (s/trim tok)
+                nil)))]
     (map (fn [[entry director & favourites]] 
            {:director (get-val director)
             :favourites 
@@ -21,7 +28,7 @@
       entries))) 
 
 #_(spit "resources/public/toptens.edn" 
-        (toptens-data (toptens-parser (slurp "resources/films.txt"))))
+      (pr-str (toptens-data (toptens-parser (slurp "resources/films.txt")))))
 
 
 (def PARSED-SAMPLE
